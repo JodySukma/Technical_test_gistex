@@ -23,12 +23,12 @@ Route::get('login', 'AuthController@showFormLogin')->name('login');
 Route::post('login', 'AuthController@login');
 Route::get('register', 'AuthController@showFormRegister')->name('register');
 Route::post('register', 'AuthController@register');
- 
+
 Route::group(['middleware' => 'auth'], function () {
- 
+
     Route::get('home', 'HomeController@index')->name('home');
     Route::get('logout', 'AuthController@logout')->name('logout');
-    
+
     // CRUD master
     Route::get('create', 'MasterController@create')->name('master.create');
     Route::post('store', 'MasterController@store')->name('master.store');
@@ -38,3 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
