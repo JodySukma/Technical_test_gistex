@@ -10,11 +10,6 @@
     {{-- Search form --}}
     @include('adminlte::partials.sidebar.menu-item-search-form')
 
-@elseif ($sidebarItemHelper->isMenuSearch($item))
-
-    {{-- Search menu --}}
-    @include('adminlte::partials.sidebar.menu-item-search-menu')
-
 @elseif ($sidebarItemHelper->isSubmenu($item))
 
     {{-- Treeview menu --}}
